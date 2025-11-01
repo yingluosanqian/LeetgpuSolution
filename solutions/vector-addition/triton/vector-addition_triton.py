@@ -1,3 +1,4 @@
+# 0.2204ms
 import torch
 import triton
 import triton.language as tl

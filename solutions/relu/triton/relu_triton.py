@@ -1,4 +1,4 @@
-# time = 0.1598ms
+# 0.1598ms
 import torch
 import triton
 import triton.language as tl
