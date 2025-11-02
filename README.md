@@ -26,3 +26,9 @@ Personal Triton GPU kernels that solve a handful of LeetGPU practice problems. E
 
 ### relu
 ![relu](benchmarks/result/relu.png)
+
+### leaky-relu
+![leaky-relu](benchmarks/result/leaky-relu.png)
+
+### rainbow-table
+![rainbow-table](benchmarks/result/rainbow-table.png)
