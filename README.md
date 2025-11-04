@@ -32,3 +32,6 @@ Personal Triton GPU kernels that solve a handful of LeetGPU practice problems. E
 
 ### rainbow-table
 ![rainbow-table](benchmarks/result/rainbow-table.png)
+
+### matrix-copy
+![matrix-copy](benchmarks/result/matrix-copy.png)
