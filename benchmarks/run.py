@@ -1,4 +1,5 @@
 
+import argparse
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
@@ -124,11 +125,34 @@ def create_result_dir():
     return result_dir
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generate benchmark charts for available ops."
+    )
+    parser.add_argument(
+        "op",
+        nargs="?",
+        help="Name of the op to update. Defaults to all ops when omitted."
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     result_dir = create_result_dir()
     ops = get_all_ops()
-    print("ops:", ops)
-    for op in ops:
+    if args.op:
+        if args.op not in ops:
+            available = ", ".join(sorted(ops))
+            raise SystemExit(
+                f"Unknown op '{args.op}'. Available ops: {available}"
+            )
+        selected_ops = [args.op]
+    else:
+        selected_ops = ops
+
+    print("ops:", selected_ops)
+    for op in selected_ops:
         time_data = get_time_data(op)
         draw(op, time_data, result_dir)
 
